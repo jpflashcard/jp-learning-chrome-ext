@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "日文翻譯及假名轉換",
+  "version": "0.1",
+  "description": "單擊日文文字時顯示平假名和翻譯，自動儲存文字並提供生字卡作練習用",
+  "permissions": [
+    "storage", "webRequest", "identity", "identity.email", "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/kuromoji.js", "content.js"]
+    },
+    {
+      "matches": ["http://localhost:8080/upload", "https://jpflashcard.github.io/upload" ],
+      "js": ["upload.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["dict/*", "lib/*", "popup.html", "popup.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Hiragana Converter"
+  },
+  "oauth2": {
+    "client_id": "596703071176-rhc2auajp54haim2ppg1tmodvqgoq9he.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/firebase"
+    ]
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  }
+}

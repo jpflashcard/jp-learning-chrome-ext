@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<script src="lib/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="lib/semantic.min.css">
+<script src="lib/semantic.min.js"></script>
+<script src="popup.js"></script>
+
+<h3 class="ui center aligned header" style="padding-top:10px">Hiragana Converter Setting</h3>
+
+<div class="ui styled accordion">
+  <div class="active title">
+    <i class="dropdown icon"></i>
+    Flashcard
+  </div>
+  <div class="active content">
+    <a class="ui button" href="https://jpflashcard.github.io/" target="_blank">Start Flashcard</a>
+    <a class="ui button" href="https://jpflashcard.github.io/upload" target="_blank">Sync Flashcard Data</a>
+  </div>
+  <div class="active title">
+    <i class="dropdown icon"></i>
+    Services
+  </div>
+  <div class="active content">
+    <form id="enable-service" class="ui form">
+      <div class="ui toggle checkbox" id="service-enabled">
+        <input type="checkbox" >
+        <label>Enable Hiragana Conversion</label>
+      </div>
+    </form>
+  </div>
+  <div class="title">
+    <i class="dropdown icon"></i>
+    Azure Translator
+  </div>
+  <div class="content">
+    <form id="azure-cognitive-services-form" class="ui form">
+      <div class="field">
+        <label>Azure Translator Key</label>
+        <input type="text" class="azure-cognitive-services-input" id="azure-cognitive-services-key" placeholder="Enter your Azure Cognitive Services key">
+      </div>
+      <div class="field">
+        <label>Azure Translator Location</label>
+        <input type="text" class="azure-cognitive-services-input" id="azure-cognitive-services-location" placeholder="Enter your Azure Cognitive Services location">
+      </div>
+      <button type="submit" class="ui button">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+  
+
